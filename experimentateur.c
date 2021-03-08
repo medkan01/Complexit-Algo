@@ -159,16 +159,20 @@ int *marqueurs_negatifs1(EXPERIENCE *xp, int *cptOP)
 
     int *res = (int *)malloc((xp->m - xp->p) * sizeof(int));
 
-    int contient, iter = 0;
+    int contient;
+    int iter = 0;
 
     for (int i = 0; i < xp->m; i++)
     {
         contient = 0;
         for (int j = 0; j < xp->p; j++)
         {
+            *cptOP += 1;
+
             if (xp->marqueurs[i] == xp->marqueurs_positifs[j])
             {
                 contient = 1;
+                break;
             }
         }
         if (contient == 0)
