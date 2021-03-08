@@ -226,7 +226,7 @@ void test(int p, int m)
     affiche(marqueurs_negatifs, xp.m - xp.p);
     printf("Strategie 1 / nombres OP : %d\n\n", cpt);
     free(marqueurs_negatifs);
-
+/*
     // Test strategie 2
     printf("\nStrategie 2\n");
     marqueurs_negatifs = marqueurs_negatifs2(&xp, &cpt);
@@ -242,7 +242,7 @@ void test(int p, int m)
     affiche(marqueurs_negatifs, xp.m - xp.p);
     printf("Strategie 1 / nombres OP : %d\n\n", cpt);
     free(marqueurs_negatifs);
-
+*/
     libere_experience(&xp);
 }
 
