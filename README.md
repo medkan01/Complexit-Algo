@@ -14,5 +14,5 @@ Pour cet algorithme, il existe un pire des cas. Ce pire des cas se réalise lors
 #### 4.
 Comme dit ci-dessus, le pire des cas se réalise lorsque m = p. Donc on pose m = p = n où n est un entier positif ou nul.
 On a alors f(n) = (n(n+1))/2.
-### Exemple
+##### Exemple
 On essaie avec m = p = n = 10. f(10) = (10(10+1))/2 = (10(11))/2 = (110)/2 = 55. Ce qui correspond bien au nombre d'opération dans le pire des cas de la première stratégie.
