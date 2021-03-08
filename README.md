@@ -2,16 +2,16 @@
 
 # Stratégie 1
 
-## 1.
+#### 1.
 Voir marqueurs_negatifs1 dans le fichier experimentateur.c
 
-## 2.
+#### 2.
 On calcule le nombre d'itérations à l'intérieur de la deuxième boucle `for`. En le faisant dans la deuxième boucle `for`, on obtient le nombre d'opérations dans la première boucle `for` ainsi que dans la deuxième.
 
-## 3.
+#### 3.
 Pour cet algorithme, il existe un pire des cas. Ce pire des cas se réalise lorsque le nombre de marqueurs positifs est égal au nombre total de marqueurs. Pour le voir autrement, le pire des cas se réalise lorsque m = p.
 
-## 4.
+#### 4.
 Comme dit ci-dessus, le pire des cas se réalise lorsque m = p. Donc on pose m = p = n où n est un entier positif ou nul.
 On a alors f(n) = (n(n+1))/2.
 ### Exemple
