@@ -192,6 +192,45 @@ int *marqueurs_negatifs2(EXPERIENCE *xp, int *cptOP)
 
     int *res = (int *)malloc((xp->m - xp->p) * sizeof(int));
 
+    int contient, iter = 0;
+
+    mergeSort(xp->marqueurs_positifs, 0, xp->p - 1);
+    int a, b, m;
+
+    for (int i = 0; i < xp->m; i++)
+    {
+        contient = 0;
+
+        a = 0;
+        b = xp->p - 1;
+
+        while (a <= b)
+        {
+            *cptOP = *cptOP + 1;
+
+            m = (a + b) / 2;
+            if (xp->marqueurs_positifs[m] == xp->marqueurs[i])
+            {
+                contient = 1;
+                break;
+            }
+            else if (xp->marqueurs_positifs[m] < xp->marqueurs[i])
+            {
+                a = m + 1;
+            }
+            else
+            {
+                b = m - 1;
+            }
+        }
+
+        if (contient == 0)
+        {
+            res[iter] = xp->marqueurs[i];
+            iter++;
+        }
+    }
+
     return res;
 }
 
@@ -209,32 +248,47 @@ int *marqueurs_negatifs3(EXPERIENCE *xp, int *cptOP)
 void test(int p, int m)
 {
     EXPERIENCE xp;
-    int cpt, *marqueurs_negatifs;
+    int cpt1, cpt2, *marqueurs_neg1, *marqueurs_neg2;
 
     // Creation de l'experience
     cree_experience(&xp, p, m);
 
+    /*
     printf("Marqueurs :\n");
     affiche(xp.marqueurs, m);
     printf("\nMarqueurs positifs :\n");
     affiche(xp.marqueurs_positifs, p);
+    */
 
     // Test strategie 1
-    printf("\nStrategie 1\n");
-    marqueurs_negatifs = marqueurs_negatifs1(&xp, &cpt);
-    printf("Marqueurs negatifs :\n");
-    affiche(marqueurs_negatifs, xp.m - xp.p);
-    printf("Strategie 1 / nombres OP : %d\n\n", cpt);
-    free(marqueurs_negatifs);
-/*
-    // Test strategie 2
-    printf("\nStrategie 2\n");
-    marqueurs_negatifs = marqueurs_negatifs2(&xp, &cpt);
-    printf("Marqueurs negatifs :\n");
-    affiche(marqueurs_negatifs, xp.m - xp.p);
-    printf("Strategie 2 / nombres OP : %d\n\n", cpt);
-    free(marqueurs_negatifs);
+    //printf("\nStrategie 1\n");
+    marqueurs_neg1 = marqueurs_negatifs1(&xp, &cpt1);
+    //printf("Marqueurs negatifs :\n");
+    //affiche(marqueurs_neg1, xp.m - xp.p);
+    //printf("Strategie 1 / nombres OP : %d\n\n", cpt);
+    free(marqueurs_neg1);
 
+    // Test strategie 2
+    //printf("\nStrategie 2\n");
+    marqueurs_neg2 = marqueurs_negatifs2(&xp, &cpt2);
+    //printf("Marqueurs negatifs :\n");
+    //affiche(marqueurs_neg2, xp.m - xp.p);
+    //printf("Strategie 2 / nombres OP : %d\n\n", cpt);
+    free(marqueurs_neg2);
+    if (*marqueurs_neg1 == *marqueurs_neg2)
+    {
+        printf("True\n");
+        printf("%i - %i\n", cpt1, cpt2);
+    }
+    else
+    {
+        affiche(marqueurs_neg1, xp.m - xp.p);
+
+        affiche(marqueurs_neg2, xp.m - xp.p);
+        printf("\n");
+    }
+
+    /*
     // Test strategie 3
     printf("\nStrategie 3\n");
     marqueurs_negatifs = marqueurs_negatifs3(&xp, &cpt);
@@ -256,8 +310,10 @@ int main(int argc, const char *argv[])
     scanf("%d", &p);
     printf("Entrez le nombre de marqueurs : ");
     scanf("%d", &m);
-
-    test(p, m);
+    for (int i = 0; i < 10; i++)
+    {
+        test(p, m);
+    }
 
     return 0;
 }
