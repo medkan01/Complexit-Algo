@@ -3,7 +3,7 @@
 # Stratégie 1
 
 #### 1.
-Voir marqueurs_negatifs1 dans le fichier experimentateur.c
+Voir la fonction `int *marqueurs_negatifs1(int *xp, *cptOP)` dans le fichier experimentateur.c
 
 #### 2.
 On calcule le nombre d'itérations à l'intérieur de la deuxième boucle `for`. En le faisant dans la deuxième boucle `for`, on obtient le nombre d'opérations dans la première boucle `for` ainsi que dans la deuxième.
@@ -20,7 +20,7 @@ On essaie avec m = p = n = 10. f(10) = (10(10+1))/2 = (10(11))/2 = (110)/2 = 55.
 # Stratégie 2
 
 #### 1.
-Voir marqueurs_negatifs2 dans le fichier experimentateur.c
+Voir la fonction `int *marqueurs_negatifs2(int *xp, *cptOP)` dans le fichier experimentateur.c
 
 #### 2.
 Pour cette algorithme, il existe aussi un pire des cas. Il se réalise, encore une fois, lorsque le nombre de marqueurs positifs est égal au nombre total de marqueurs. Donc lorsque m = p.
@@ -31,7 +31,7 @@ On note b la borne supérieure pour le nombre d'opérations c2(m,p). Prenons le 
 # Stratégie 3
 
 #### 1.
-Voir marqueurs_negatifs3 dans le fichier experimentateur.c
+Voir la fonction `int *marqueurs_negatifs3(int *xp, *cptOP)` dans le fichier experimentateur.c
 
 #### 2.
 Il existe, une fois de plus, un pire des cas. Celui-ci se réalise lorsque m = p.
