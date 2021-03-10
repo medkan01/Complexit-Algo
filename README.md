@@ -27,3 +27,16 @@ Pour cette algorithme, il existe aussi un pire des cas. Il se réalise, encore u
 
 #### 3.
 On note b la borne supérieure pour le nombre d'opérations c2(m,p). Prenons le cas où m = p = 10. Alors b = 29.
+
+# Stratégie 3
+
+#### 1.
+Voir marqueurs_negatifs3 dans le fichier experimentateur.c
+
+#### 2.
+Il existe, une fois de plus, un pire des cas. Celui-ci se réalise lorsque m = p.
+Dans cet algorithme, il est possible de déterminer le nombre exact d'opérations c3(m,p) en fonction de m et de p.
+Ceci car c3(m,p) = c3(n) = 2n - 1.
+
+##### Exemple
+On essaie avec n = 10. c3(10) = 2 * 10 - 1 = 20 - 1 = 19.
