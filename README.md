@@ -44,4 +44,6 @@ On essaie avec n = 10. c3(10) = 2 * 10 - 1 = 20 - 1 = 19.
 # 6 Recherche empirique des cas favorables
 
 #### 1.
-Voir la fonction ```c void test(int p, int m)``` dans le fichier experimentateur.c
+Voir la fonction ```c
+void test(int p, int m)
+``` dans le fichier experimentateur.c
