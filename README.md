@@ -44,6 +44,18 @@ On essaie avec n = 10. c3(10) = 2 * 10 - 1 = 20 - 1 = 19.
 # 6 Recherche empirique des cas favorables
 
 #### 1.
-Voir la fonction ```c
-void test(int p, int m)
-``` dans le fichier experimentateur.c
+Voir le fichier experimentateur.c
+
+#### 2.
+Après l'execution de plusieurs tests, on remarque aisément que, peut importe le cas de figure, donc peut importe la valeur de m et p, la stratégie n°3 est toujours la plus performante dans le temps. Ensuite, la stratégie n°2 est en deuxième position puis vient la stratégie n°1.
+On peut faire ce constat plus facilement en initialisant m = p. On aura alors les pires des cas possibles ainsi que le nombre d'opérations de chaque cas.
+Ceci est probablement dû au fait que les tableaux sont triés ou non.
+
+#### 3.
+Voir la fonction `void test(int p, int m)` dans le fichier experimentateur.c
+
+#### 4.
+Les dix fichiers sont dans le répertoire actuel.
+
+#### 5.
+Les courbes seront données sous format .pdf

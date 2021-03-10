@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 // Fonction pour echanger deux entiers
 void echange(int *a, int *b)
@@ -247,15 +248,15 @@ int *marqueurs_negatifs3(EXPERIENCE *xp, int *cptOP)
     mergeSort(xp->marqueurs, 0, xp->m - 1);
     mergeSort(xp->marqueurs_positifs, 0, xp->p - 1);
 
-    for(int i = 0; i < xp->m; i++)
+    for (int i = 0; i < xp->m; i++)
     {
         contient = 0;
 
-        for(j = j; j < xp->p; j++)
+        for (j = j; j < xp->p; j++)
         {
             *cptOP = *cptOP + 1;
 
-            if(xp->marqueurs[i] < xp->marqueurs_positifs[j])
+            if (xp->marqueurs[i] < xp->marqueurs_positifs[j])
             {
                 break;
             }
@@ -284,13 +285,6 @@ void test(int p, int m)
     // Creation de l'experience
     cree_experience(&xp, p, m);
 
-    /*
-    printf("Marqueurs :\n");
-    affiche(xp.marqueurs, m);
-    printf("\nMarqueurs positifs :\n");
-    affiche(xp.marqueurs_positifs, p);
-    */
-
     // Test strategie 1
     marqueurs_neg1 = marqueurs_negatifs1(&xp, &cpt1);
     free(marqueurs_neg1);
@@ -303,25 +297,23 @@ void test(int p, int m)
     marqueurs_neg3 = marqueurs_negatifs3(&xp, &cpt3);
     free(marqueurs_neg3);
 
-    if (marqueurs_neg3 == marqueurs_neg1 && marqueurs_neg3 == marqueurs_neg2)
-    {
-        printf("True\n");
-        printf("%i  %i  %i  %i  %i\n", xp.m, xp.p, cpt1, cpt2, cpt3);
-    }
-    else
-    {
-        printf("False\n");
-    }
+    // Affichage des valeurs obtenues
+    printf("%i %i %i %i %i\n", xp.m, xp.p, cpt1, cpt2, cpt3);
+
     libere_experience(&xp);
 }
 
 int main(int argc, const char *argv[])
 {
+    int m;
     srand((unsigned int)time(NULL));
 
-    for (int i = 1; i <= 400; i++)
+    printf("Entrez le nombre de marqueurs : ");
+    scanf("%d", &m);
+
+    for (int i = 1; i <= m; i++)
     {
-        test(i, 400);
+        test(i, m);
     }
 
     return 0;
