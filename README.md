@@ -58,4 +58,4 @@ Voir la fonction `void test(int p, int m)` dans le fichier experimentateur.c
 Les dix fichiers sont dans le répertoire actuel.
 
 #### 5.
-Les courbes seront données sous format .pdf
+Les courbes seront données sous format .png
